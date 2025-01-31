@@ -1,0 +1,7 @@
+CHROM	POS	BW-ft-drum-23-116_S5_sorted.bam	BW-ft-drum-23-119_S6_sorted.bam	BW-ft-drum-23-125_S7_sorted.bam	BW-ft-drum-23-126_S8_sorted.bam	GW-ft-drum-23-026_S1_sorted.bam	GW-ft-drum-23-118_S2_sorted.bam	GW-ft-drum-23-154_S3_sorted.bam	GW-ft-drum-23-155_S4_sorted.bam
+amplicon_reference_4a_20_24_25_z1_z2	228	1/1	1/1	1/1	0/0	0/0	0/0	0/0	0/0
+amplicon_reference_4a_20_24_25_z1_z2	611	0/0	0/0	0/0	0/0	1/1	1/1	1/1	1/1
+amplicon_reference_4a_20_24_25_z1_z2	1085	0/0	0/1	0/0	0/0	0/0	0/1	1/1	1/1
+amplicon_reference_4a_20_24_25_z1_z2	1555	1/1	1/1	1/1	1/1	0/0	0/0	0/1	0/0
+amplicon_reference_4a_20_24_25_z1_z2	1802	0/0	0/0	0/0	0/0	1/1	1/1	1/1	0/1
+amplicon_reference_4a_20_24_25_z1_z2	2264	1/1	1/1	1/1	0/1	0/0	0/0	0/0	0/0
