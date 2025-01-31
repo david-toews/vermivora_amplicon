@@ -6,4 +6,4 @@
    
 4) amplicon_sites.bed is the file used to force GATK to call SNPs at the specified sites.
 
-5) raw_genotypes.txt is the resulting text file from the output of the analysis for the genotypes for the 8 birds across the 6 site.
+5) raw_genotypes.txt is the resulting text file from the output of the analysis for the genotypes for the 8 birds across the 6 sites.
