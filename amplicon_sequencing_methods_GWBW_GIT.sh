@@ -1,11 +1,14 @@
 
-##Build reference amplicon scaffold
+#Step 1 - ##Build reference "genome"
 bowtie2-build /go/to/folder/GWBW_amplicon_test/amplicon_reference_4a_20_24_25_z1_z2.fa /go/to/folder/GWBW_amplicon_test/amplicon_reference_4a_20_24_25_z1_z2
 
 java -jar /storage/group/dut374/default/sw/picard-3.1.0/bin/picard.jar CreateSequenceDictionary R=/go/to/folder/GWBW_amplicon_test/amplicon_reference_4a_20_24_25_z1_z2.fa O=/go/to/folder/GWBW_amplicon_test/amplicon_reference_4a_20_24_25_z1_z2.dict
 
 samtools faidx /go/to/folder/GWBW_amplicon_test/amplicon_reference_4a_20_24_25_z1_z2.fa
 
+
+
+#Step 2 - ##Align the short reads across the 8 samples to this reference
 
 # Navigate to the working directory
 cd /go/to/folder
@@ -50,7 +53,7 @@ EOF
 done
 
 
-###Compress, sort and index BAM files
+###Step 3 - Compress, sort and index BAM files
 
 # Set the main directory
 cd /go/to/folder
@@ -99,7 +102,9 @@ done
 salloc --account=###### -N 1 -n 8 --mem-per-cpu=5000 -t 3:00:00
 
 
-##Call SNPs with GATK
+
+
+##Step 4 - Create a file to direct the genotypes to just those SNPs we are interested in
 
 ##make amplicon_sites.bed
 cat <<EOF > amplicon_sites.bed
@@ -112,7 +117,9 @@ amplicon_reference_4a_20_24_25_z1_z2 2263 2264
 EOF
 
 
-##Call SNPs with GATK: using -L to force it to call SNPs for just those sites defined above
+
+
+##Step 5 - Call SNPs with GATK: using -L to force it to call SNPs for just those sites defined above
 
 # Define directories and reference
 BAM_DIR="/go/to/folder/GWBW_amplicon_test/BAM"
@@ -139,6 +146,11 @@ for BAM_FILE in ${BAM_DIR}/*sorted.bam; do
         -L /go/to/folder/amplicon_sites.bed
 done
 
+
+
+
+
+##Step 6 - Create a final Genotype table
 
 
 ##The obvious next step here would be to combine ths GVCFs like normal and do joint genotyping, but GATK was doing weird
