@@ -1,3 +1,5 @@
+Method details: https://www.biorxiv.org/content/10.1101/2025.02.03.636269v1 or Toews_Besch_method_2025.02.03.636269v1.full.pdf
+
 1) /GWBW_amplicon_raw_data/ holds the raw data for the test amplicon sequencing approach.
    
 2) amplicon_sequencing_methods_GWBW_GIT.sh has the full scripts for the analyses from raw data to alignment to genotypes.
